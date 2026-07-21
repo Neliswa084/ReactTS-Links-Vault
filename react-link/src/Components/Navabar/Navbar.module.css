@@ -1,0 +1,13 @@
+nav{
+    position: relative;
+    top: 0;
+    background-color:blanchedalmond;
+    border: solid rgb(219, 175, 108);
+}
+.container{
+    color: black;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: top;
+}
