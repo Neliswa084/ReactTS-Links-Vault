@@ -1,5 +1,18 @@
 .add-container{
     display: flex;
     justify-content: space-between;
-   
+     padding: 70px;
+}
+.add-button{
+    border-radius: 40px;
+    width: 20%;
+    background-color: white;
+    color: black;
+    background-color: rgb(219, 175, 108);
+    font-size:x-large
+}
+.img{
+    width: 20px;
+    vertical-align: middle; 
+    margin-right: 9px;
 }
