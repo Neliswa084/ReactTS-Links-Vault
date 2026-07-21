@@ -1,0 +1,25 @@
+.modal{
+    position:absolute;
+    top:0;
+    width: 44%;
+    height: 100%;
+    z-index:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(110, 108, 108, 0.5);
+    font-size: x-large;
+}
+.modal-child{
+    position: relative;
+
+}
+.close-icon{
+    position: absolute;
+    height: 30px;
+    height: 30px;
+    padding: 10px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
