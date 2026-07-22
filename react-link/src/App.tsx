@@ -4,6 +4,9 @@ import { Navbar } from './Components/Navabar/Navbar'
 import { Searchbar } from './Components/Search/Searchbar'
 import { LinkForm } from './Components/Form/LinkForm'
 import { useState } from 'react'
+import { LinkList } from './Components/LinkList/LinkList'
+// import { LinkListProps } from './Components/LinkList/LinkList'
+
 
 function App() {
 
@@ -15,6 +18,7 @@ const [isFormVisible, setShowForm] = useState(false)
      <Add showForm={() => setShowForm(true)}/>
      <LinkForm isVisible={isFormVisible} close={() => setShowForm(false)}/>
      <Searchbar/>
+     {/* <LinkList /> */}
     </>
   )
 }
