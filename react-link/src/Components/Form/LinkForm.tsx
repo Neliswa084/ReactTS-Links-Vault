@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Modal } from '../Modal/Modal'
 import { TextInput } from '../Inputs/TextInput'
 import { Button } from '../Inputs/Button'
@@ -10,17 +10,22 @@ type LinkFormProps ={
   isVisible: boolean
 }
 
+const [title, setTitle] = useState('')
+const [url , setUrl] = useState('')
+const [description , setDescription] = useState('')
+const [tag , setTags] = useState('')
+
 export const LinkForm: React.FC<LinkFormProps> = ({close , isVisible}) => {
    if(!isVisible) return null
     return (
      <Modal close={close}>
         <div className={styles['container']}>
-        <TextInput label="Title" onChange={()=> {}}/>
-        <TextInput label="Link(URL)" onChange={()=> {}}/>
-        <TextInput label="Description" onChange={()=> {}}/>
-        <TextInput label="Tags" onChange={()=> {}}/>
+        <TextInput label="Title" value={title} onChange={(e)=> setTitle(e.target.value)}/>
+        <TextInput label="Link(URL)" value={url} onChange={(e)=> setUrl(e.target.value)}/>
+        <TextInput label="Description" value={description} onChange={(e)=> setDescription(e.target.value)}/>
+        <TextInput label="Tags" value={tag} onChange={(e)=> setTags(e.target.value)}/>
          <Button value={'Add Link'} />
         </div>
      </Modal>
   )
-}
+}   
