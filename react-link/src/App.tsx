@@ -15,11 +15,18 @@ const [isFormVisible, setShowForm] = useState(false)
 
 const [links, setLinks] = useState<LinkRowProps[]>([])
 
+const addLink=(newlink: LinkRowProps) =>{
+  setLinks([...links,newlink])
+}
+
   return (
     <>
      <Navbar />
      <Add showForm={() => setShowForm(true)}/>
-     <LinkForm isVisible={isFormVisible} close={() => setShowForm(false)}/>
+     <LinkForm 
+     isVisible={isFormVisible} 
+     close={() => setShowForm(false)}
+     onSave={addLink}/>
      <Searchbar/>
 
      <LinkList links={links} />
