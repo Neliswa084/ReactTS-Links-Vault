@@ -5,12 +5,15 @@ import { Searchbar } from './Components/Search/Searchbar'
 import { LinkForm } from './Components/Form/LinkForm'
 import { useState } from 'react'
 import { LinkList } from './Components/LinkList/LinkList'
-// import { LinkListProps } from './Components/LinkList/LinkList'
+import { LinkRow, type LinkRowProps } from './Components/LinkList/LinkRow'
 
 
-function App() {
+
+function App() {   
 
 const [isFormVisible, setShowForm] = useState(false)
+
+const [links, setLinks] = useState<LinkRowProps[]>([])
 
   return (
     <>
@@ -18,9 +21,10 @@ const [isFormVisible, setShowForm] = useState(false)
      <Add showForm={() => setShowForm(true)}/>
      <LinkForm isVisible={isFormVisible} close={() => setShowForm(false)}/>
      <Searchbar/>
-     {/* <LinkList /> */}
+
+     <LinkList links={links} />
     </>
   )
-}
+} 
 
 export default App
