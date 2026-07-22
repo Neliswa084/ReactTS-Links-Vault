@@ -20,7 +20,11 @@ export const LinkList: React.FC<LinkListProps> = ({ links }) => {
                 </tr>
             </thead>
             <tbody>
-                {links.map((link) => (
+                {links.length ===0 &&
+                <p style={{color: 'black'}}>No links saved , click Add Link to Get Started</p>
+                }
+                {
+                links.map((link) => (
                     <LinkRow key={link.id} {...link} />
                 ))}
             </tbody>

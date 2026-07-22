@@ -16,7 +16,6 @@ export const LinkRow: React.FC<LinkRowProps> = ({id,title,url,description,tags})
       <td>{description}</td>
       <td>{tags}</td>
       <td>
-        <button>View</button>
         <button>Edit</button>
         <button>Delete</button>
       </td>
