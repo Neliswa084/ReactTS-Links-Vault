@@ -1,11 +1,12 @@
 import React from 'react'
-import { LinkRow, type LinkRowProps } from './LinkRow'
+import { LinkRow, type Link, type LinkRowProps } from './LinkRow'
 
 type LinkListProps = {
-    links: LinkRowProps[]
+    links: Link[]
+    onDelete: (id:number) => void
 }
 
-export const LinkList: React.FC<LinkListProps> = ({ links }) => {
+export const LinkList: React.FC<LinkListProps> = ({ links, onDelete}) => {
 
 
     return (
@@ -25,7 +26,7 @@ export const LinkList: React.FC<LinkListProps> = ({ links }) => {
                 }
                 {
                 links.map((link) => (
-                    <LinkRow key={link.id} {...link} />
+                    <LinkRow key={link.id} {...link} onDelete={onDelete} />
                 ))}
             </tbody>
         </table>

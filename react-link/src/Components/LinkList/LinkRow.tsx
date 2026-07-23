@@ -1,14 +1,18 @@
 import React from 'react'
 
-export type LinkRowProps={
-    id: number,
+export type Link={
+   id: number,
     title: string,
     url: string,
     description: string,
     tags: string,
 }
+export type LinkRowProps= Link &{
+  
+    onDelete:(id:number) => void
+}
 
-export const LinkRow: React.FC<LinkRowProps> = ({id,title,url,description,tags}) => {
+export const LinkRow: React.FC<LinkRowProps> = ({id,title,url,description,tags,onDelete}) => {
   return (
     <tr>
       <td>{title}</td>
@@ -17,7 +21,7 @@ export const LinkRow: React.FC<LinkRowProps> = ({id,title,url,description,tags})
       <td>{tags}</td>
       <td>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => onDelete(id)}>Delete</button>
       </td>
     </tr>
   

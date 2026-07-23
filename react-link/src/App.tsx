@@ -5,7 +5,7 @@ import { Searchbar } from './Components/Search/Searchbar'
 import { LinkForm } from './Components/Form/LinkForm'
 import { useState } from 'react'
 import { LinkList } from './Components/LinkList/LinkList'
-import { LinkRow, type LinkRowProps } from './Components/LinkList/LinkRow'
+import { LinkRow, type Link, type LinkRowProps } from './Components/LinkList/LinkRow'
 
 
 
@@ -13,12 +13,15 @@ function App() {
 
 const [isFormVisible, setShowForm] = useState(false)
 
-const [links, setLinks] = useState<LinkRowProps[]>([])
+const [links, setLinks] = useState<Link[]>([])
 
-const addLink=(newlink: LinkRowProps) =>{
+const addLink=(newlink: Link) =>{
   setLinks([...links,newlink])
 }
 
+const deleteLink=(id:number) => {
+  setLinks(links.filter(link=>link.id !==id))
+}
   return (
     <>
      <Navbar />
@@ -29,7 +32,7 @@ const addLink=(newlink: LinkRowProps) =>{
      onSave={addLink}/>
      <Searchbar/>
 
-     <LinkList links={links} />
+     <LinkList links={links} onDelete={deleteLink} />
     </>
   )
 } 

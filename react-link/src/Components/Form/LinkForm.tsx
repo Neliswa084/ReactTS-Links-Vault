@@ -3,13 +3,14 @@ import { Modal } from '../Modal/Modal'
 import { TextInput } from '../Inputs/TextInput'
 import { Button } from '../Inputs/Button'
 import styles from './Form.module.css'
-import type { LinkRowProps } from '../LinkList/LinkRow'
+import type { Link, LinkRowProps } from '../LinkList/LinkRow'
 
 
 type LinkFormProps ={
     close: () => void,
   isVisible: boolean,
-  onSave:(link:LinkRowProps) => void
+  onSave:(link:Link) => void
+
 }
 
 export const LinkForm: React.FC<LinkFormProps> = ({close , isVisible , onSave}) => {
