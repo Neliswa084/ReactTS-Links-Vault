@@ -15,12 +15,20 @@ const [isFormVisible, setShowForm] = useState(false)
 
 const [links, setLinks] = useState<Link[]>([])
 
+const [selectedLink, setSelectedLink] = useState<Link | null>(null)
+
 const addLink=(newlink: Link) =>{
   setLinks([...links,newlink])
 }
 
 const deleteLink=(id:number) => {
   setLinks(links.filter(link=>link.id !==id))
+}
+
+
+const viewLink = (id: number) => {
+  const link = links.find(l => l.id === id)
+  if(link) setSelectedLink(link)
 }
   return (
     <>

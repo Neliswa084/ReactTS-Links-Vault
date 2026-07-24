@@ -21,9 +21,13 @@ export const LinkList: React.FC<LinkListProps> = ({ links, onDelete}) => {
                 </tr>
             </thead>
             <tbody>
-                {links.length ===0 &&
-                <p style={{color: 'black'}}>No links saved , click Add Link to Get Started</p>
-                }
+              {links.length === 0 &&
+            <tr>
+            <td colSpan={5} style={{color:'black', textAlign:'center', padding:'20px'}}>
+               No links saved, click Add Link to Get Started
+              </td>
+               </tr>
+            }
                 {
                 links.map((link) => (
                     <LinkRow key={link.id} {...link} onDelete={onDelete} />
