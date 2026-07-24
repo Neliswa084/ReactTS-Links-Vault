@@ -1,7 +1,7 @@
 import React from 'react'
-import {Text} from '../../Text/Text'
+import {Text} from '../Text/Text'
 import styles from './Add.module.css'
-import plusIcon from '../../../assets/plus.png'
+import plusIcon from '../../assets/plus.png'
 
 type  AddProps={
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { LinkRow, type Link, type LinkRowProps } from './LinkRow'
+import { LinkRow, type Link} from './LinkRow'
 
 type LinkListProps = {
     links: Link[]
