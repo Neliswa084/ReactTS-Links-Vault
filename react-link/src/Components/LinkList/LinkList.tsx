@@ -1,8 +1,8 @@
 import React from 'react'
-import { LinkRow, type Link} from './LinkRow'
+import { LinkRow, type LinkItem} from './LinkRow'
 
 type LinkListProps = {
-    links: Link[]
+    links: LinkItem[]
     onDelete: (id:number) => void
 }
 

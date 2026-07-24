@@ -3,13 +3,13 @@ import { Modal } from '../Modal/Modal'
 import { TextInput } from '../Inputs/TextInput'
 import { Button } from '../Inputs/Button'
 import styles from './Form.module.css'
-import type { Link} from '../LinkList/LinkRow'
+import type { LinkItem} from '../LinkList/LinkRow'
 
 
 type LinkFormProps ={
     close: () => void,
   isVisible: boolean,
-  onSave:(link:Link) => void
+  onSave:(link:LinkItem) => void
 
 }
 

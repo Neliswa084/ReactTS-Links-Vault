@@ -1,13 +1,13 @@
 import React from 'react'
 
-export type Link={
+export type LinkItem={
    id: number,
     title: string,
     url: string,
     description: string,
     tags: string,
 }
-export type LinkRowProps= Link &{
+export type LinkRowProps= LinkItem &{
   
     onDelete:(id:number) => void
 }
